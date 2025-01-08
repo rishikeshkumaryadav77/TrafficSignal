@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+/* .forallBackground {
+    background-color: #86d2f2;
+    height: 100vh;
+    background-size: cover;
+}
+
+.trafficlight {
+    font-family: "Roboto";
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.stop {
+    background-color: #1f1d41;
+    color: white;
+    font-family: "Roboto";
+    border-radius: 8px;
+    height: 40px;
+    width: 70px;
+    margin-top: 30px;
+    margin-right: 30px;
+    border-width: 0px;
+}
+
+.ready {
+    background-color: #1f1d41;
+    color: white;
+    font-family: "Roboto";
+    border-radius: 8px;
+    height: 40px;
+    width: 70px;
+    margin-top: 30px;
+    border-width: 0px;
+}
+
+.go {
+    background-color: #1f1d41;
+    color: white;
+    font-family: "Roboto";
+    border-radius: 8px;
+    height: 40px;
+    width: 70px;
+    margin-top: 30px;
+    border-width: 0px;
+}
+
+.redcircle {
+    background-color: #4b5069;
+    height: 55px;
+    width: 55px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.yellowcircle {
+    background-color: #4b5069;
+    height: 55px;
+    width: 55px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 18px;
+}
+
+.greencircle {
+    background-color: #4b5069;
+    margin-left: 19px;
+    height: 55px;
+    width: 55px;
+    border-radius: 30px;
+    margin-top: 18px;
+
+}
+
+.signal-stand {
+    background-color: #1f1d41;
+    height: 250px;
+    width: 90px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+/* General Background with Animation
+.forallBackground {
+  background: linear-gradient(45deg, #86d2f2, #f29e86, #86f2aa);
+  height: 100vh;
+  background-size: 200% 200%;
+  animation: backgroundMove 10s infinite;
+}
+
+
+Here’s an updated version of your HTML and CSS with some new styles, animations, and interactive effects:
+
+Updated HTML
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="forallBackground d-flex flex-column justify-content-center">
+        <h1 class="trafficlight">Traffic Light</h1>
+        <div class="d-flex flex-row justify-content-center">
+            <div class="d-flex flex-column">
+                <button class="stop" onclick="btnredcircle()" id="stopButton">Stop</button>
+                <button class="ready" onclick="btnYellowcircle()" id="readyButton">Ready</button>
+                <button class="go" onclick="btnGreencircle()" id="goButton">Go</button>
+            </div>
+            <div class="signal-stand">
+                <div class="redcircle pulse" id="stopLight"></div>
+                <div class="yellowcircle pulse" id="readyLight"></div>
+                <div class="greencircle pulse" id="goLight"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+Updated CSS
+css
+Copy code
+/* General Background with Animation */
+.forallBackground {
+  background: linear-gradient(120deg, #86d2f2, #f29e86, #86f2aa);
+  height: 100vh;
+  background-size: 300% 300%;
+  animation: backgroundScroll 8s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Animation */
+@keyframes backgroundScroll {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Heading Style */
+.trafficlight {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2s ease;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Buttons with Hover Effects */
+.stop,
+.ready,
+.go {
+  background-color: #1f1d41;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 8px;
+  height: 45px;
+  width: 80px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.stop:hover {
+  background-color: #ff4c4c;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.ready:hover {
+  background-color: #ffd700;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.go:hover {
+  background-color: #4caf50;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Signal Circles with Pulse Animation */
+.redcircle,
+.yellowcircle,
+.greencircle {
+  background-color: #4b5069;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 15px auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pulse:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Signal Stand */
+.signal-stand {
+  background-color: #1f1d41;
+  height: 300px;
+  width: 100px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
